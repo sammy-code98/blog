@@ -16,8 +16,8 @@ export default function Home({ articles }) {
     <>
       <div className="grid">
         <main className="">
-          <h1 className="text-yellow-300 text-center font-bold text-5xl m-2 p-2">Welcome on board</h1>
-          <ul className="grid grid-cols-3 gap-5 justify-center space-x-3 px-7 py-7 mx-7 md:p-auto md:m-auto ">
+          <h1 className="text-yellow-300 text-center font-bold text-2xl m-2 p-2 sm:text-5xl">Welcome on board</h1>
+          <ul className="grid grid-cols-1 gap-5 justify-center space-x-3 px-7 py-7 mx-7 md:p-auto md:m-auto md:grid-cols-3 ">
             {articles?.length > 0 &&
               articles.map((article) => (
                 <li key={article._id} className="bg-gray-50 rounded-lg h-60 w-60  shadow-lg">

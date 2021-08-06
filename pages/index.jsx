@@ -14,17 +14,17 @@ const articlesQuery = `*[_type == "posts"]{
 export default function Home({ articles }) {
   return (
     <>
-      <div className="flex flex-col py-2">
-        <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-          <h1>Welcome on board</h1>
-          <ul>
+      <div className="grid">
+        <main className="">
+          <h1 className="text-yellow-300 text-center font-bold text-5xl m-2 p-2">Welcome on board</h1>
+          <ul className="grid grid-cols-3 gap-5 justify-center space-x-3 px-7 py-7 mx-7 md:p-auto md:m-auto ">
             {articles?.length > 0 &&
               articles.map((article) => (
-                <li key={article._id}>
+                <li key={article._id} className="bg-gray-50 rounded-lg h-60 w-60  shadow-lg">
                   <Link href={`/articles/${article.slug.current}`}>
                     <a>
-                      <img  src={urlFor(article.image)}/>
-                      <span>{article.name}</span>
+                      <img  src={urlFor(article.image)} className="px-4 py-2  h-40 w-full"/>
+                      <p className="text-center mt-2 text-xl font-light text-yellow-300">{article.name}</p>
                     </a>
                   </Link>
                 </li>

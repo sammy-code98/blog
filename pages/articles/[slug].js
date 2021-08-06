@@ -43,13 +43,13 @@ export default function onePost({ data, preview }) {
         </button>
       </Link>
       <article>
-        <h1 className="text-xl text-yellow-300 text-center">{articles.name}</h1>
+        <h1 className="text-2xl text-yellow-300 font-bold text-center">{articles.name}</h1>
         <main>
-          <img src={urlFor(articles?.image).url()} />
-          <p>Author : {articles?.author}</p>
-          <p>Published On : {articles.date}</p>
-          <div>
-            <PortableText blocks={articles?.body} />
+          <img src={urlFor(articles?.image).url()}  className="rounded-md shadow-6 w-9/12 p-3 item-center m-auto"/>
+          <p className="mx-12 font-medium my-2 text-xl">Author : {articles?.author}</p>
+          <p className="mx-12 font-medium my-2 text-xl">Published On : {articles.date}</p>
+          <div className="m-auto leading-relaxed text-center px-5 tracking-normal">
+            <PortableText blocks={articles?.body}  />
           </div>
         </main>
       </article>

@@ -9,13 +9,14 @@ const articlesQuery = `*[_type == "posts"]{
   image,
   authors,
   date,
+  
 }
 `;
 export default function Home({ articles }) {
   return (
     <>
-      <div className="grid">
-        <main className="">
+      <div className="grid bg-gray-50">
+        <main>
           <h1 className="text-yellow-300 text-center font-bold text-2xl m-2 p-2 sm:text-5xl">Welcome on board</h1>
           <ul className="grid grid-cols-1 gap-5 justify-center space-x-3 px-7 py-7 mx-7 md:p-auto md:m-auto md:grid-cols-3 ">
             {articles?.length > 0 &&
@@ -25,6 +26,8 @@ export default function Home({ articles }) {
                     <a>
                       <img  src={urlFor(article.image)} className="px-4 py-2  h-40 w-full"/>
                       <p className="text-center mt-2 text-xl font-light text-yellow-300">{article.name}</p>
+                      <p>{article.authors.name}</p>
+                      <p className="text-center mt-2 text-l font-thin text-grey">{article.date}</p>
                     </a>
                   </Link>
                 </li>
